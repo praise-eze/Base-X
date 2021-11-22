@@ -1,6 +1,7 @@
 # nft-minter
 
-This is a copy of the alchemy nft class scripts and some tweaks mabe by me
+
+
 
 run "npm install"
 or "yarn install"
