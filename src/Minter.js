@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+const ethers = require('ethers');
 
 import {
   connectWallet,
@@ -39,6 +40,7 @@ const Minter = (props) => {
     }
   }
 
+
   useEffect(async () => {
     const { address, status } = await getCurrentWalletConnected();
     setWallet(address)
@@ -77,19 +79,19 @@ const Minter = (props) => {
         Simply add your asset's link, name, and description, then press "Mint."
       </p>
       <form>
-        <h2>🖼 Link to asset: </h2>
+        <h2>Link to asset: </h2>
         <input
           type="text"
           placeholder="e.g. https://gateway.pinata.cloud/ipfs/<hash>"
           onChange={(event) => setURL(event.target.value)}
         />
-        <h2>🤔 Name: </h2>
+        <h2>Name: </h2>
         <input
           type="text"
           placeholder="e.g. My first NFT!"
           onChange={(event) => setName(event.target.value)}
         />
-        <h2>✍️ Description: </h2>
+        <h2>Description: </h2>
         <input
           type="text"
           placeholder="e.g. Even cooler than cryptokitties ;)"
