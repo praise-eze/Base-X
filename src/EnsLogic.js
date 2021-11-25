@@ -15,49 +15,13 @@ class EnsLogic extends React.Component {
     }
     handleChange = (event) => {
         this.setState({ inputvalue: event.target.value })
+        
     }
-    handleSubmit = async (event) => {
-        var stats
-        event.preventDefault();
-        // console.log("clicked");
-        this.setState({ search: this.state.inputvalue })
-        stats = this.state.search;
-        if (stats.length === 42) {
-            console.log(stats);
-
-            var name = await provider.lookupAddress(stats);
-            if (name === null) {
-                alert("No ENS name for this address");
-                <p>No ENS name for this address</p>
-            } else {
-                console.log(stats);
-                alert(name);
-                <p>The Name for {stats}- {name}</p>
-
-            }
-            // ethers.js automatically checks that the forward resolution matches.
-        } else if (stats.length < 42) {
-            var Ensaddress = await provider.resolveName(stats);
-            if (Ensaddress === null) {
-                alert("No ens name this address")
-                    <>
-                    <p>No Address for this account </p>
-                    <p>May be get one from <a href='https://ens.domains/'> ENS site</a> </p>
-                </>
-            } else {
-                <p>{Ensaddress}</p>
-                alert(Ensaddress);
-                console.log(stats);
-            }
-        } else {
-            alert("Nothing really ");
-            <>
-                <p>Nothing really</p>
-                <p>No Address or ENS name for this account </p>
-                <p>May be get one from <a href='https://ens.domains/'> ENS site</a> </p>
-            </>
-        }
-
+    handleSubmit =(event) => {
+           event.preventDefault();
+           this.setState({ search: this.state.inputvalue })
+        // console.log("clicked");  
+        alert(this.state.search);
 
     }
 

@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-const ethers = require('ethers');
 
 import {
   connectWallet,
@@ -9,6 +8,7 @@ import {
 const Minter = (props) => {
 
   //State variables
+  const ethers = require('ethers');
   const [walletAddress, setWallet] = useState("");
   const [status, setStatus] = useState("");
   const [name, setName] = useState("");
@@ -76,15 +76,10 @@ const Minter = (props) => {
       <br></br>
       <h1 id="title"> NFT Minter</h1>
       <p>
-        Simply add your asset's link, name, and description, then press "Mint."
+        Simply add your asset's link, name, and description, then press "PIN NFT".
       </p>
-      <form>
-        <h2>Link to asset: </h2>
-        <input
-          type="text"
-          placeholder="e.g. https://gateway.pinata.cloud/ipfs/<hash>"
-          onChange={(event) => setURL(event.target.value)}
-        />
+      <br></br>
+      
         <h2>Name: </h2>
         <input
           type="text"
@@ -95,11 +90,19 @@ const Minter = (props) => {
         <input
           type="text"
           placeholder="e.g. Even cooler than cryptokitties ;)"
-          onChange={(event) => setDescription(event.target.value)}
+          onChange={(event) => setDescription(event.target.value)}   />
+     
+      <form>
+        <h2>Link to asset: </h2>
+        <input
+          type="text"
+          placeholder="e.g. https://gateway.pinata.cloud/ipfs/<hash>"
+          onChange={(event) => setURL(event.target.value)}
         />
+      
       </form>
       <button id="mintButton" onClick={onMintPressed}>
-        Mint NFT
+        PIN NFT
       </button>
       <p id="status">
         {status}
